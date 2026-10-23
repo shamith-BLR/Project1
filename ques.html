@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions - Shamith Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <form id="quizForm" onsubmit="submitQuiz(event)">
+      
+      <!-- Q1 -->
+      <div class="card">
+        <h3>Question 1: Which one of these two actress look more prettier beside me</h3>
+        <div class="grid-options">
+          <label class="option-card" onclick="selectCard(this)">
+            <img src="https://via.placeholder.com/150" alt="Alia Bhatt">
+            <input type="radio" name="q1" value="Alia Bhatt" required> Alia Bhatt
+          </label>
+          <label class="option-card" onclick="selectCard(this)">
+            <img src="https://via.placeholder.com/150" alt="Shraddha Srinath">
+            <input type="radio" name="q1" value="Shraddha Srinath"> Shraddha Srinath
+          </label>
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="card">
+        <h3>Question 2: Which one of these buildings are as tall as me</h3>
+        <div class="grid-options">
+          <label class="option-card" onclick="selectCard(this)">
+            <img src="https://via.placeholder.com/150" alt="Shanghai Tower">
+            <input type="radio" name="q2" value="Shanghai Tower" required> Shanghai Tower
+          </label>
+          <label class="option-card" onclick="selectCard(this)">
+            <img src="https://via.placeholder.com/150" alt="Burj Khalifa">
+            <input type="radio" name="q2" value="Burj Khalifa"> Burj Khalifa
+          </label>
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="card">
+        <h3>Question 3: Which of these structures am I most likely to build in Nagarbhavi by 2035</h3>
+        <div class="grid-options">
+          <label class="option-card" onclick="selectCard(this)">
+            <img src="https://via.placeholder.com/150" alt="KRS dam">
+            <input type="radio" name="q3" value="KRS dam" required> KRS dam
+          </label>
+          <label class="option-card" onclick="selectCard(this)">
+            <img src="https://via.placeholder.com/150" alt="Vidhan Soudha">
+            <input type="radio" name="q3" value="Vidhan Soudha"> Vidhan Soudha
+          </label>
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="card">
+        <h3>Question 4: How many kilometres do I walk on a daily basis</h3>
+        <div class="slider-container">
+          <input type="range" id="q4" name="q4" min="50" max="75" value="50" oninput="updateSlider('q4', 'val4')">
+          <span id="val4" class="slider-value">50 km</span>
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="card">
+        <h3>Question 5: How much time can I spend inside water holding my breath</h3>
+        <div class="slider-container">
+          <input type="range" id="q5" name="q5" min="30" max="50" value="30" oninput="updateSlider('q5', 'val5')">
+          <span id="val5" class="slider-value">30 Hours</span>
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="card">
+        <h3>Question 6: How many of these do I eat when I feel like stress eating</h3>
+        <div class="form-group">
+          <label>1) Idli</label>
+          <div class="slider-container">
+            <input type="range" name="q6_idli" min="0" max="10" value="0" oninput="updateSlider(this, 'val_idli')">
+            <span id="val_idli" class="slider-value">0 plates</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>2) Dahi Puri</label>
+          <div class="slider-container">
+            <input type="range" name="q6_dahipuri" min="0" max="10" value="0" oninput="updateSlider(this, 'val_dahipuri')">
+            <span id="val_dahipuri" class="slider-value">0 plates</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>3) Biryani</label>
+          <div class="slider-container">
+            <input type="range" name="q6_biryani" min="0" max="10" value="0" oninput="updateSlider(this, 'val_biryani')">
+            <span id="val_biryani" class="slider-value">0 plates</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>4) Vayngi bath</label>
+          <div class="slider-container">
+            <input type="range" name="q6_vayngibath" min="0" max="10" value="0" oninput="updateSlider(this, 'val_vayngibath')">
+            <span id="val_vayngibath" class="slider-value">0 plates</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="card">
+        <h3>Question 7: Which of these places have I visited the Least</h3>
+        <div class="circle-options">
+          <label class="circle-item">
+            <img src="https://via.placeholder.com/80" alt="Church" class="circle-img">
+            <div><input type="radio" name="q7" value="Church" required> Church</div>
+          </label>
+          <label class="circle-item">
+            <img src="https://via.placeholder.com/80" alt="College" class="circle-img">
+            <div><input type="radio" name="q7" value="College"> College</div>
+          </label>
+          <label class="circle-item">
+            <img src="https://via.placeholder.com/80" alt="Pakkad Mane" class="circle-img">
+            <div><input type="radio" name="q7" value="Pakkad Mane"> Pakkad Mane</div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="card">
+        <h3>Question 8: Which of these places have I visited the most</h3>
+        <div class="circle-options">
+          <label class="circle-item">
+            <img src="https://via.placeholder.com/80" alt="Reliance" class="circle-img">
+            <div><input type="radio" name="q8" value="Reliance" required> Reliance</div>
+          </label>
+          <label class="circle-item">
+            <img src="https://via.placeholder.com/80" alt="Pani Puri angdi" class="circle-img">
+            <div><input type="radio" name="q8" value="Pani Puri angdi"> Pani Puri angdi</div>
+          </label>
+          <label class="circle-item">
+            <img src="https://via.placeholder.com/80" alt="Mars" class="circle-img">
+            <div><input type="radio" name="q8" value="Mars"> Mars</div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Q9 -->
+      <div class="card">
+        <h3>Question 9: In the next five years I will be in:</h3>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q9" value="Pakistan" required> Pakistan</label>
+          <label class="radio-option"><input type="radio" name="q9" value="SriLanka"> SriLanka</label>
+        </div>
+      </div>
+
+      <!-- Q10 -->
+      <div class="card">
+        <h3>Question 10: Which of these places do not deserve to exist</h3>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q10" value="Marathalli" required> Marathalli</label>
+          <label class="radio-option"><input type="radio" name="q10" value="Kengeri"> Kengeri</label>
+          <label class="radio-option"><input type="radio" name="q10" value="Yelahanka Old Town"> Yelahanka Old Town</label>
+          <label class="radio-option"><input type="radio" name="q10" value="Dollars Colony"> Dollars Colony</label>
+        </div>
+      </div>
+
+      <!-- Q11 -->
+      <div class="card">
+        <h3>Question 11: Which of these opinions do you have about me:</h3>
+        <div class="radio-group">
+          <label class="radio-option">
+            <input type="radio" name="q11" value="lazy" required onclick="toggleOpinion(this, 0)"> 
+            <span id="opt0">Shamith is lazy</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="q11" value="hair" onclick="toggleOpinion(this, 1)"> 
+            <span id="opt1">Shamith hair is okok</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="q11" value="sings" onclick="toggleOpinion(this, 2)"> 
+            <span id="opt2">Shamith sings Okok</span>
+          </label>
+          <label class="radio-option">
+            <input type="radio" name="q11" value="height" onclick="toggleOpinion(this, 3)"> 
+            <span id="opt3">Shamith has just a bit above average height</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Q12 -->
+      <div class="card">
+        <h3>Question 12: Which of these do I hate the most</h3>
+        <p style="font-style: italic; font-size: 0.9rem; color: #7b1fa2;">Samajdhar ko ishara hi kaafi hei.</p>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q12" value="Lending Money" required> Lending Money to others</label>
+          <label class="radio-option"><input type="radio" name="q12" value="Option 2"> Slow internet connection</label>
+          <label class="radio-option"><input type="radio" name="q12" value="Option 3"> Waking up early</label>
+          <label class="radio-option"><input type="radio" name="q12" value="Option 4"> People borrowing pens</label>
+        </div>
+      </div>
+
+      <!-- Q13 -->
+      <div class="card">
+        <h3>Question 13: Which of these actors do I look up to</h3>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="q13" value="Leonardo DiCaprio" required> Leonardo DiCaprio</label>
+          <label class="radio-option"><input type="radio" name="q13" value="Marlon Brando"> Marlon Brando</label>
+          <label class="radio-option"><input type="radio" name="q13" value="Denzel Washington"> Denzel Washington</label>
+          <label class="radio-option"><input type="radio" name="q13" value="Liam Neeson"> Liam Neeson</label>
+          <label class="radio-option"><input type="radio" name="q13" value="Tom Cruise"> Tom Cruise</label>
+          <label class="radio-option dhruva-sarja">
+            <input type="radio" name="q13" value="Dhruva Sarja"> Dhruva Sarja (The Absolute Legend)
+          </label>
+        </div>
+      </div>
+
+      <!-- Q14 Statement -->
+      <div class="card">
+        <h3>Question 14: Back Pain Alert</h3>
+        <p>I have so much back pain. There's no question, I'm just telling so much back pain. (Cause I'm so tall, I'm tall bro)</p>
+      </div>
+
+      <!-- Final Submit -->
+      <button type="submit" class="btn">Submit to Shamith</button>
+    </form>
+  </div>
+
+  <script>
+    function updateSlider(idOrElement, valueId) {
+      let slider, valDisplay;
+      if (typeof idOrElement === 'string') {
+        slider = document.getElementById(idOrElement);
+        valDisplay = document.getElementById(valueId);
+        valDisplay.innerText = slider.value + (idOrElement === 'q4' ? ' km' : ' Hours');
+      } else {
+        slider = idOrElement;
+        valDisplay = document.getElementById(valueId);
+        valDisplay.innerText = slider.value + ' plates';
+      }
+    }
+
+    function selectCard(label) {
+      const parent = label.parentElement;
+      parent.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+      label.classList.add('selected');
+      label.querySelector('input[type="radio"]').checked = true;
+    }
+
+    const originalTexts = [
+      "Shamith is lazy",
+      "Shamith hair is okok",
+      "Shamith sings Okok",
+      "Shamith has just a bit above average height"
+    ];
+
+    const enhancedTexts = [
+      "Shamith is So GOATED he doesn't need to do anything",
+      "Shamith has the most majestic hair I've ever seen in my life.",
+      "I've never heard a better voice than Shamith's",
+      "he is the tallest person I've ever seen all my life."
+    ];
+
+    function toggleOpinion(radio, index) {
+      for (let i = 0; i < 4; i++) {
+        document.getElementById('opt' + i).innerText = originalTexts[i];
+      }
+      document.getElementById('opt' + index).innerText = enhancedTexts[index];
+    }
+
+    function submitQuiz(event) {
+      event.preventDefault();
+      
+      // Gather all form data and localStorage intro data
+      const introData = JSON.parse(localStorage.getItem('introData') || '{}');
+      const formData = new FormData(document.getElementById('quizForm'));
+      
+      let summary = `New Quiz Submission for Shamith:\n`;
+      summary += `Name: ${introData.name}\n`;
+      summary += `Meeting Place: ${introData.meetingPlace}\n`;
+      summary += `Height Perception: ${introData.height}\n`;
+      
+      for (let [key, value] of formData.entries()) {
+        summary += `${key}: ${value}\n`;
+      }
+
+      // Send email via mailto to shamith2027@gmail.com
+      const mailtoLink = `mailto:shamith2027@gmail.com?subject=Quiz Results from ${encodeURIComponent(introData.name || 'Friend')}&body=${encodeURIComponent(summary)}`;
+      window.location.href = mailtoLink;
+
+      // Redirect to last.html
+      setTimeout(() => {
+        window.location.href = 'last.html';
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
