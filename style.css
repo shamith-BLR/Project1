@@ -1,1 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap');
+
+:root {
+  --primary-purple: #4a148c;
+  --accent-purple: #7b1fa2;
+  --light-purple: #e1bee7;
+  --pale-purple: #f3e5f5;
+  --white: #ffffff;
+  --text-dark: #2d0c57;
+  --gray-text: #666666;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Google Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--primary-purple) 0%, var(--accent-purple) 45%, var(--pale-purple) 100%);
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(74, 20, 140, 0.2);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(74, 20, 140, 0.3);
+}
+
+h1, h2, h3 {
+  color: var(--primary-purple);
+  margin-bottom: 12px;
+}
+
+p {
+  color: var(--gray-text);
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.profile-container {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--accent-purple);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+}
+
+.profile-label {
+  font-weight: 500;
+  color: var(--primary-purple);
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--primary-purple), var(--accent-purple));
+  color: var(--white);
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  transition: opacity 0.2s;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* Form Inputs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid var(--light-purple);
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus {
+  border-color: var(--accent-purple);
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--pale-purple);
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Sliders */
+.slider-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent-purple);
+}
+
+.slider-value {
+  background: var(--light-purple);
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: var(--primary-purple);
+  min-width: 50px;
+  text-align: center;
+}
+
+/* Options & Grid Layouts */
+.grid-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.option-card {
+  background: var(--pale-purple);
+  border: 2px solid transparent;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.option-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.option-card input[type="radio"] {
+  display: none;
+}
+
+.option-card.selected {
+  border-color: var(--accent-purple);
+  background: var(--light-purple);
+}
+
+/* Circles for Q7, Q8 */
+.circle-options {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 15px;
+}
+
+.circle-item {
+  text-align: center;
+  cursor: pointer;
+}
+
+.circle-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--accent-purple);
+  margin-bottom: 5px;
+  transition: transform 0.2s;
+}
+
+.circle-item:hover .circle-img {
+  transform: scale(1.05);
+}
+
+/* Special Actor Q13 */
+.dhruva-sarja {
+  background: #ffecb3 !important;
+  border: 2px solid #ff8f00 !important;
+  transform: scale(1.05);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e65100;
+}
+
+/* New.html Haphazard layout */
+.haphazard-grid {
+  position: relative;
+  height: 500px;
+}
+
+.image-node {
+  position: absolute;
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 140px;
+  text-align: center;
+}
+
+.image-node img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+}
 
