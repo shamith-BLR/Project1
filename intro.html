@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduction - Shamith Quiz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Banni sirrr Banni Madam!!!</h1>
+    </div>
+
+    <div class="card">
+      <h3>Firstu, yaari neevu ??</h3>
+      <p>I mean there is no need since I am pretty sure I know to which person I have sent this link</p>
+      
+      <form id="introForm">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+          <label for="meetingPlace">Which place did we meet:</label>
+          <input type="text" id="meetingPlace" name="meetingPlace" required placeholder="Where did we cross paths?">
+        </div>
+
+        <div class="form-group">
+          <label>Height:</label>
+          <div class="radio-group">
+            <label class="radio-option"><input type="radio" name="height" value="Taller than you"> Taller than you</label>
+            <label class="radio-option"><input type="radio" name="height" value="shorter than you"> shorter than you</label>
+            <label class="radio-option"><input type="radio" name="height" value="almost same height"> almost same height</label>
+          </div>
+        </div>
+
+        <button type="button" id="startBtn" class="btn" disabled onclick="validateAndProceed()">Start Answering</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('introForm');
+    const startBtn = document.getElementById('startBtn');
+    const nameInput = document.getElementById('name');
+    const placeInput = document.getElementById('meetingPlace');
+    const heightRadios = document.getElementsByName('height');
+
+    function checkForm() {
+      const nameVal = nameInput.value.trim();
+      const placeVal = placeInput.value.trim();
+      let heightSelected = false;
+      for (const radio of heightRadios) {
+        if (radio.checked) {
+          heightSelected = true;
+          break;
+        }
+      }
+
+      if (nameVal !== '' && placeVal !== '' && heightSelected) {
+        startBtn.disabled = false;
+      } else {
+        startBtn.disabled = true;
+      }
+    }
+
+    nameInput.addEventListener('input', checkForm);
+    placeInput.addEventListener('input', checkForm);
+    heightRadios.forEach(radio => radio.addEventListener('change', checkForm));
+
+    function validateAndProceed() {
+      const data = {
+        name: nameInput.value,
+        meetingPlace: placeInput.value,
+        height: document.querySelector('input[name="height"]:checked').value
+      };
+      localStorage.setItem('introData', JSON.stringify(data));
+      window.location.href = 'ques.html';
+    }
+  </script>
+</body>
+</html>
