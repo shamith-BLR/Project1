@@ -8,7 +8,6 @@
 </head>
 <body>
   <div class="container">
-    <!-- Formsubmit action endpoint configured with shamith2027@gmail.com -->
     <form id="quizForm" action="https://formsubmit.co/shamith2027@gmail.com" method="POST">
       
       <!-- Hidden fields for Formsubmit configuration and Intro Data -->
@@ -25,11 +24,11 @@
         <h3>Question 1: Which one of these two actress look more prettier beside me</h3>
         <div class="grid-options">
           <label class="option-card" onclick="selectCard(this)">
-            <img src="https://via.placeholder.com/150" alt="Alia Bhatt">
+            <img src="https://via.placeholder.com/300x180" alt="Alia Bhatt">
             <input type="radio" name="q1" value="Alia Bhatt" required> Alia Bhatt
           </label>
           <label class="option-card" onclick="selectCard(this)">
-            <img src="https://via.placeholder.com/150" alt="Shraddha Srinath">
+            <img src="https://via.placeholder.com/300x180" alt="Shraddha Srinath">
             <input type="radio" name="q1" value="Shraddha Srinath"> Shraddha Srinath
           </label>
         </div>
@@ -40,11 +39,11 @@
         <h3>Question 2: Which one of these buildings are as tall as me</h3>
         <div class="grid-options">
           <label class="option-card" onclick="selectCard(this)">
-            <img src="https://via.placeholder.com/150" alt="Shanghai Tower">
+            <img src="https://via.placeholder.com/300x180" alt="Shanghai Tower">
             <input type="radio" name="q2" value="Shanghai Tower" required> Shanghai Tower
           </label>
           <label class="option-card" onclick="selectCard(this)">
-            <img src="https://via.placeholder.com/150" alt="Burj Khalifa">
+            <img src="https://via.placeholder.com/300x180" alt="Burj Khalifa">
             <input type="radio" name="q2" value="Burj Khalifa"> Burj Khalifa
           </label>
         </div>
@@ -55,11 +54,11 @@
         <h3>Question 3: Which of these structures am I most likely to build in Nagarbhavi by 2035</h3>
         <div class="grid-options">
           <label class="option-card" onclick="selectCard(this)">
-            <img src="https://via.placeholder.com/150" alt="KRS dam">
+            <img src="https://via.placeholder.com/300x180" alt="KRS dam">
             <input type="radio" name="q3" value="KRS dam" required> KRS dam
           </label>
           <label class="option-card" onclick="selectCard(this)">
-            <img src="https://via.placeholder.com/150" alt="Vidhan Soudha">
+            <img src="https://via.placeholder.com/300x180" alt="Vidhan Soudha">
             <input type="radio" name="q3" value="Vidhan Soudha"> Vidhan Soudha
           </label>
         </div>
@@ -116,40 +115,40 @@
         </div>
       </div>
 
-      <!-- Q7 -->
+      <!-- Q7 (Circular Options Stacked Vertically with Larger Images) -->
       <div class="card">
         <h3>Question 7: Which of these places have I visited the Least</h3>
         <div class="circle-options">
           <label class="circle-item">
-            <img src="https://via.placeholder.com/75" alt="Church" class="circle-img">
-            <div><input type="radio" name="q7_visited_least" value="Church" required> Church</div>
+            <img src="https://via.placeholder.com/110" alt="Church" class="circle-img">
+            <div><input type="radio" name="q7_visited_least" value="Church" required> <strong>Church</strong></div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/75" alt="College" class="circle-img">
-            <div><input type="radio" name="q7_visited_least" value="College"> College</div>
+            <img src="https://via.placeholder.com/110" alt="College" class="circle-img">
+            <div><input type="radio" name="q7_visited_least" value="College"> <strong>College</strong></div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/75" alt="Pakkad Mane" class="circle-img">
-            <div><input type="radio" name="q7_visited_least" value="Pakkad Mane"> Pakkad Mane</div>
+            <img src="https://via.placeholder.com/110" alt="Pakkad Mane" class="circle-img">
+            <div><input type="radio" name="q7_visited_least" value="Pakkad Mane"> <strong>Pakkad Mane</strong></div>
           </label>
         </div>
       </div>
 
-      <!-- Q8 -->
+      <!-- Q8 (Circular Options Stacked Vertically with Larger Images) -->
       <div class="card">
         <h3>Question 8: Which of these places have I visited the most</h3>
         <div class="circle-options">
           <label class="circle-item">
-            <img src="https://via.placeholder.com/75" alt="Reliance" class="circle-img">
-            <div><input type="radio" name="q8_visited_most" value="Reliance" required> Reliance</div>
+            <img src="https://via.placeholder.com/110" alt="Reliance" class="circle-img">
+            <div><input type="radio" name="q8_visited_most" value="Reliance" required> <strong>Reliance</strong></div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/75" alt="Pani Puri angdi" class="circle-img">
-            <div><input type="radio" name="q8_visited_most" value="Pani Puri angdi"> Pani Puri angdi</div>
+            <img src="https://via.placeholder.com/110" alt="Pani Puri angdi" class="circle-img">
+            <div><input type="radio" name="q8_visited_most" value="Pani Puri angdi"> <strong>Pani Puri angdi</strong></div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/75" alt="Mars" class="circle-img">
-            <div><input type="radio" name="q8_visited_most" value="Mars"> Mars</div>
+            <img src="https://via.placeholder.com/110" alt="Mars" class="circle-img">
+            <div><input type="radio" name="q8_visited_most" value="Mars"> <strong>Mars</strong></div>
           </label>
         </div>
       </div>
@@ -235,8 +234,11 @@
     </form>
   </div>
 
+  <footer class="site-footer">
+    Ibrugu madok bere kelsa illa
+  </footer>
+
   <script>
-    // Populate hidden intro data fields from localStorage
     window.addEventListener('DOMContentLoaded', () => {
       const introData = JSON.parse(localStorage.getItem('introData') || '{}');
       if(introData.name) document.getElementById('hidden_name').value = introData.name;
