@@ -8,8 +8,18 @@
 </head>
 <body>
   <div class="container">
-    <form id="quizForm" onsubmit="submitQuiz(event)">
+    <!-- Formsubmit action endpoint configured with shamith2027@gmail.com -->
+    <form id="quizForm" action="https://formsubmit.co/shamith2027@gmail.com" method="POST">
       
+      <!-- Hidden fields for Formsubmit configuration and Intro Data -->
+      <input type="hidden" name="_subject" value="New Quiz Submission for Shamith!">
+      <input type="hidden" name="_next" value="last.html">
+      <input type="hidden" name="_captcha" value="false">
+      
+      <input type="hidden" id="hidden_name" name="Intro_Name">
+      <input type="hidden" id="hidden_meetingPlace" name="Intro_Meeting_Place">
+      <input type="hidden" id="hidden_height" name="Intro_Height_Perception">
+
       <!-- Q1 -->
       <div class="card">
         <h3>Question 1: Which one of these two actress look more prettier beside me</h3>
@@ -59,7 +69,7 @@
       <div class="card">
         <h3>Question 4: How many kilometres do I walk on a daily basis</h3>
         <div class="slider-container">
-          <input type="range" id="q4" name="q4" min="50" max="75" value="50" oninput="updateSlider('q4', 'val4')">
+          <input type="range" id="q4" name="q4_daily_walk_km" min="50" max="75" value="50" oninput="updateSlider('q4', 'val4', ' km')">
           <span id="val4" class="slider-value">50 km</span>
         </div>
       </div>
@@ -68,7 +78,7 @@
       <div class="card">
         <h3>Question 5: How much time can I spend inside water holding my breath</h3>
         <div class="slider-container">
-          <input type="range" id="q5" name="q5" min="30" max="50" value="30" oninput="updateSlider('q5', 'val5')">
+          <input type="range" id="q5" name="q5_water_breath_hours" min="30" max="50" value="30" oninput="updateSlider('q5', 'val5', ' Hours')">
           <span id="val5" class="slider-value">30 Hours</span>
         </div>
       </div>
@@ -79,28 +89,28 @@
         <div class="form-group">
           <label>1) Idli</label>
           <div class="slider-container">
-            <input type="range" name="q6_idli" min="0" max="10" value="0" oninput="updateSlider(this, 'val_idli')">
+            <input type="range" id="q6_idli" name="q6_stress_idli" min="0" max="10" value="0" oninput="updateSlider('q6_idli', 'val_idli', ' plates')">
             <span id="val_idli" class="slider-value">0 plates</span>
           </div>
         </div>
         <div class="form-group">
           <label>2) Dahi Puri</label>
           <div class="slider-container">
-            <input type="range" name="q6_dahipuri" min="0" max="10" value="0" oninput="updateSlider(this, 'val_dahipuri')">
+            <input type="range" id="q6_dahipuri" name="q6_stress_dahipuri" min="0" max="10" value="0" oninput="updateSlider('q6_dahipuri', 'val_dahipuri', ' plates')">
             <span id="val_dahipuri" class="slider-value">0 plates</span>
           </div>
         </div>
         <div class="form-group">
           <label>3) Biryani</label>
           <div class="slider-container">
-            <input type="range" name="q6_biryani" min="0" max="10" value="0" oninput="updateSlider(this, 'val_biryani')">
+            <input type="range" id="q6_biryani" name="q6_stress_biryani" min="0" max="10" value="0" oninput="updateSlider('q6_biryani', 'val_biryani', ' plates')">
             <span id="val_biryani" class="slider-value">0 plates</span>
           </div>
         </div>
         <div class="form-group">
           <label>4) Vayngi bath</label>
           <div class="slider-container">
-            <input type="range" name="q6_vayngibath" min="0" max="10" value="0" oninput="updateSlider(this, 'val_vayngibath')">
+            <input type="range" id="q6_vayngibath" name="q6_stress_vayngibath" min="0" max="10" value="0" oninput="updateSlider('q6_vayngibath', 'val_vayngibath', ' plates')">
             <span id="val_vayngibath" class="slider-value">0 plates</span>
           </div>
         </div>
@@ -111,16 +121,16 @@
         <h3>Question 7: Which of these places have I visited the Least</h3>
         <div class="circle-options">
           <label class="circle-item">
-            <img src="https://via.placeholder.com/80" alt="Church" class="circle-img">
-            <div><input type="radio" name="q7" value="Church" required> Church</div>
+            <img src="https://via.placeholder.com/75" alt="Church" class="circle-img">
+            <div><input type="radio" name="q7_visited_least" value="Church" required> Church</div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/80" alt="College" class="circle-img">
-            <div><input type="radio" name="q7" value="College"> College</div>
+            <img src="https://via.placeholder.com/75" alt="College" class="circle-img">
+            <div><input type="radio" name="q7_visited_least" value="College"> College</div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/80" alt="Pakkad Mane" class="circle-img">
-            <div><input type="radio" name="q7" value="Pakkad Mane"> Pakkad Mane</div>
+            <img src="https://via.placeholder.com/75" alt="Pakkad Mane" class="circle-img">
+            <div><input type="radio" name="q7_visited_least" value="Pakkad Mane"> Pakkad Mane</div>
           </label>
         </div>
       </div>
@@ -130,16 +140,16 @@
         <h3>Question 8: Which of these places have I visited the most</h3>
         <div class="circle-options">
           <label class="circle-item">
-            <img src="https://via.placeholder.com/80" alt="Reliance" class="circle-img">
-            <div><input type="radio" name="q8" value="Reliance" required> Reliance</div>
+            <img src="https://via.placeholder.com/75" alt="Reliance" class="circle-img">
+            <div><input type="radio" name="q8_visited_most" value="Reliance" required> Reliance</div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/80" alt="Pani Puri angdi" class="circle-img">
-            <div><input type="radio" name="q8" value="Pani Puri angdi"> Pani Puri angdi</div>
+            <img src="https://via.placeholder.com/75" alt="Pani Puri angdi" class="circle-img">
+            <div><input type="radio" name="q8_visited_most" value="Pani Puri angdi"> Pani Puri angdi</div>
           </label>
           <label class="circle-item">
-            <img src="https://via.placeholder.com/80" alt="Mars" class="circle-img">
-            <div><input type="radio" name="q8" value="Mars"> Mars</div>
+            <img src="https://via.placeholder.com/75" alt="Mars" class="circle-img">
+            <div><input type="radio" name="q8_visited_most" value="Mars"> Mars</div>
           </label>
         </div>
       </div>
@@ -148,8 +158,8 @@
       <div class="card">
         <h3>Question 9: In the next five years I will be in:</h3>
         <div class="radio-group">
-          <label class="radio-option"><input type="radio" name="q9" value="Pakistan" required> Pakistan</label>
-          <label class="radio-option"><input type="radio" name="q9" value="SriLanka"> SriLanka</label>
+          <label class="radio-option"><input type="radio" name="q9_future_location" value="Pakistan" required> Pakistan</label>
+          <label class="radio-option"><input type="radio" name="q9_future_location" value="SriLanka"> SriLanka</label>
         </div>
       </div>
 
@@ -157,10 +167,10 @@
       <div class="card">
         <h3>Question 10: Which of these places do not deserve to exist</h3>
         <div class="radio-group">
-          <label class="radio-option"><input type="radio" name="q10" value="Marathalli" required> Marathalli</label>
-          <label class="radio-option"><input type="radio" name="q10" value="Kengeri"> Kengeri</label>
-          <label class="radio-option"><input type="radio" name="q10" value="Yelahanka Old Town"> Yelahanka Old Town</label>
-          <label class="radio-option"><input type="radio" name="q10" value="Dollars Colony"> Dollars Colony</label>
+          <label class="radio-option"><input type="radio" name="q10_deserve_exist" value="Marathalli" required> Marathalli</label>
+          <label class="radio-option"><input type="radio" name="q10_deserve_exist" value="Kengeri"> Kengeri</label>
+          <label class="radio-option"><input type="radio" name="q10_deserve_exist" value="Yelahanka Old Town"> Yelahanka Old Town</label>
+          <label class="radio-option"><input type="radio" name="q10_deserve_exist" value="Dollars Colony"> Dollars Colony</label>
         </div>
       </div>
 
@@ -169,19 +179,19 @@
         <h3>Question 11: Which of these opinions do you have about me:</h3>
         <div class="radio-group">
           <label class="radio-option">
-            <input type="radio" name="q11" value="lazy" required onclick="toggleOpinion(this, 0)"> 
+            <input type="radio" name="q11_opinion" value="lazy" required onclick="toggleOpinion(this, 0)"> 
             <span id="opt0">Shamith is lazy</span>
           </label>
           <label class="radio-option">
-            <input type="radio" name="q11" value="hair" onclick="toggleOpinion(this, 1)"> 
+            <input type="radio" name="q11_opinion" value="hair" onclick="toggleOpinion(this, 1)"> 
             <span id="opt1">Shamith hair is okok</span>
           </label>
           <label class="radio-option">
-            <input type="radio" name="q11" value="sings" onclick="toggleOpinion(this, 2)"> 
+            <input type="radio" name="q11_opinion" value="sings" onclick="toggleOpinion(this, 2)"> 
             <span id="opt2">Shamith sings Okok</span>
           </label>
           <label class="radio-option">
-            <input type="radio" name="q11" value="height" onclick="toggleOpinion(this, 3)"> 
+            <input type="radio" name="q11_opinion" value="height" onclick="toggleOpinion(this, 3)"> 
             <span id="opt3">Shamith has just a bit above average height</span>
           </label>
         </div>
@@ -190,12 +200,12 @@
       <!-- Q12 -->
       <div class="card">
         <h3>Question 12: Which of these do I hate the most</h3>
-        <p style="font-style: italic; font-size: 0.9rem; color: #7b1fa2;">Samajdhar ko ishara hi kaafi hei.</p>
+        <p style="font-style: italic; font-size: 0.9rem; color: var(--accent-purple); font-weight: 600;">Samajdhar ko ishara hi kaafi hei.</p>
         <div class="radio-group">
-          <label class="radio-option"><input type="radio" name="q12" value="Lending Money" required> Lending Money to others</label>
-          <label class="radio-option"><input type="radio" name="q12" value="Option 2"> Slow internet connection</label>
-          <label class="radio-option"><input type="radio" name="q12" value="Option 3"> Waking up early</label>
-          <label class="radio-option"><input type="radio" name="q12" value="Option 4"> People borrowing pens</label>
+          <label class="radio-option"><input type="radio" name="q12_hate" value="Lending Money Option 1" required> Lending Money to others</label>
+          <label class="radio-option"><input type="radio" name="q12_hate" value="Lending Money Option 2"> Lending Money to others</label>
+          <label class="radio-option"><input type="radio" name="q12_hate" value="Lending Money Option 3"> Lending Money to others</label>
+          <label class="radio-option"><input type="radio" name="q12_hate" value="Lending Money Option 4"> Lending Money to others</label>
         </div>
       </div>
 
@@ -203,19 +213,19 @@
       <div class="card">
         <h3>Question 13: Which of these actors do I look up to</h3>
         <div class="radio-group">
-          <label class="radio-option"><input type="radio" name="q13" value="Leonardo DiCaprio" required> Leonardo DiCaprio</label>
-          <label class="radio-option"><input type="radio" name="q13" value="Marlon Brando"> Marlon Brando</label>
-          <label class="radio-option"><input type="radio" name="q13" value="Denzel Washington"> Denzel Washington</label>
-          <label class="radio-option"><input type="radio" name="q13" value="Liam Neeson"> Liam Neeson</label>
-          <label class="radio-option"><input type="radio" name="q13" value="Tom Cruise"> Tom Cruise</label>
-          <label class="radio-option dhruva-sarja">
-            <input type="radio" name="q13" value="Dhruva Sarja"> Dhruva Sarja (The Absolute Legend)
+          <label class="radio-option"><input type="radio" name="q13_actor" value="Leonardo DiCaprio" required> Leonardo DiCaprio</label>
+          <label class="radio-option"><input type="radio" name="q13_actor" value="Marlon Brando"> Marlon Brando</label>
+          <label class="radio-option"><input type="radio" name="q13_actor" value="Denzel Washington"> Denzel Washington</label>
+          <label class="radio-option"><input type="radio" name="q13_actor" value="Liam Neeson"> Liam Neeson</label>
+          <label class="radio-option"><input type="radio" name="q13_actor" value="Tom Cruise"> Tom Cruise</label>
+          <label class="radio-option dhruva-sarja-option">
+            <input type="radio" name="q13_actor" value="Dhruva Sarja"> Dhruva Sarja (The Absolute Legend)
           </label>
         </div>
       </div>
 
       <!-- Q14 Statement -->
-      <div class="card">
+      <div class="card" style="background: var(--pale-purple); border-left: 6px solid var(--accent-purple);">
         <h3>Question 14: Back Pain Alert</h3>
         <p>I have so much back pain. There's no question, I'm just telling so much back pain. (Cause I'm so tall, I'm tall bro)</p>
       </div>
@@ -226,17 +236,18 @@
   </div>
 
   <script>
-    function updateSlider(idOrElement, valueId) {
-      let slider, valDisplay;
-      if (typeof idOrElement === 'string') {
-        slider = document.getElementById(idOrElement);
-        valDisplay = document.getElementById(valueId);
-        valDisplay.innerText = slider.value + (idOrElement === 'q4' ? ' km' : ' Hours');
-      } else {
-        slider = idOrElement;
-        valDisplay = document.getElementById(valueId);
-        valDisplay.innerText = slider.value + ' plates';
-      }
+    // Populate hidden intro data fields from localStorage
+    window.addEventListener('DOMContentLoaded', () => {
+      const introData = JSON.parse(localStorage.getItem('introData') || '{}');
+      if(introData.name) document.getElementById('hidden_name').value = introData.name;
+      if(introData.meetingPlace) document.getElementById('hidden_meetingPlace').value = introData.meetingPlace;
+      if(introData.height) document.getElementById('hidden_height').value = introData.height;
+    });
+
+    function updateSlider(sliderId, valueId, suffix) {
+      const slider = document.getElementById(sliderId);
+      const valDisplay = document.getElementById(valueId);
+      valDisplay.innerText = slider.value + suffix;
     }
 
     function selectCard(label) {
@@ -265,32 +276,6 @@
         document.getElementById('opt' + i).innerText = originalTexts[i];
       }
       document.getElementById('opt' + index).innerText = enhancedTexts[index];
-    }
-
-    function submitQuiz(event) {
-      event.preventDefault();
-      
-      // Gather all form data and localStorage intro data
-      const introData = JSON.parse(localStorage.getItem('introData') || '{}');
-      const formData = new FormData(document.getElementById('quizForm'));
-      
-      let summary = `New Quiz Submission for Shamith:\n`;
-      summary += `Name: ${introData.name}\n`;
-      summary += `Meeting Place: ${introData.meetingPlace}\n`;
-      summary += `Height Perception: ${introData.height}\n`;
-      
-      for (let [key, value] of formData.entries()) {
-        summary += `${key}: ${value}\n`;
-      }
-
-      // Send email via mailto to shamith2027@gmail.com
-      const mailtoLink = `mailto:shamith2027@gmail.com?subject=Quiz Results from ${encodeURIComponent(introData.name || 'Friend')}&body=${encodeURIComponent(summary)}`;
-      window.location.href = mailtoLink;
-
-      // Redirect to last.html
-      setTimeout(() => {
-        window.location.href = 'last.html';
-      }, 1000);
     }
   </script>
 </body>
