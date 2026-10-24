@@ -51,7 +51,6 @@ body {
   box-shadow: 0 18px 40px rgba(49, 27, 146, 0.35);
 }
 
-/* Arrow card layout for index.html */
 .card-with-arrow {
   display: flex;
   justify-content: space-between;
@@ -140,7 +139,6 @@ p {
   box-shadow: none;
 }
 
-/* Form Inputs */
 .form-group {
   margin-bottom: 20px;
 }
@@ -201,7 +199,6 @@ input[type="text"]:focus {
   height: 18px;
 }
 
-/* Sliders */
 .slider-container {
   display: flex;
   align-items: center;
@@ -231,7 +228,6 @@ input[type="range"] {
   font-size: 0.95rem;
 }
 
-/* Grid Options (Q1, Q2, Q3) - Enlarged image size */
 .grid-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -253,7 +249,7 @@ input[type="range"] {
 
 .option-card img {
   width: 100%;
-  height: 180px; /* Increased image size in quiz.html */
+  height: 180px;
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -269,10 +265,9 @@ input[type="range"] {
   box-shadow: 0 4px 12px rgba(123, 31, 162, 0.2);
 }
 
-/* Circle Options (Q7, Q8) - Stacked vertically and larger images */
 .circle-options {
   display: flex;
-  flex-direction: column; /* Images stacked one below the other */
+  flex-direction: column;
   margin-top: 15px;
   gap: 15px;
 }
@@ -297,8 +292,8 @@ input[type="range"] {
 }
 
 .circle-img {
-  width: 110px; /* Increased circle image size */
-  height: 110px; /* Increased circle image size */
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent-purple);
@@ -312,7 +307,6 @@ input[type="range"] {
   height: 18px;
 }
 
-/* Special Actor Q13 styling */
 .dhruva-sarja-option {
   background: linear-gradient(135deg, #7b1fa2, #4a148c) !important;
   color: var(--white) !important;
@@ -327,11 +321,10 @@ input[type="range"] {
   background: linear-gradient(135deg, #4a148c, #311b92) !important;
 }
 
-/* Spacing and non-overlapping for new.html with larger images */
 .gallery-grid {
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 15px;
   margin: 20px 0;
 }
 
@@ -341,22 +334,24 @@ input[type="range"] {
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(74, 20, 140, 0.12);
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 22px;
+  text-align: center;
+  gap: 12px;
   border: 2px solid var(--light-purple);
 }
 
 .image-node img {
-  width: 220px; /* Increased image size in new.html */
-  height: 180px; /* Increased image size in new.html */
+  width: 100%;
+  max-width: 260px;
+  height: 180px;
   object-fit: cover;
   border-radius: 12px;
   border: 3px solid var(--accent-purple);
-  flex-shrink: 0;
 }
 
 .image-content {
-  flex: 1;
+  width: 100%;
 }
 
 .image-content strong {
@@ -373,14 +368,12 @@ input[type="range"] {
 }
 
 .connector-arrow {
-  text-align: center;
-  color: var(--accent-purple);
-  font-size: 1.6rem;
-  font-weight: bold;
-  margin: -10px 0;
+  height: 40px;
+  width: 2px;
+  border-left: 3px dotted var(--accent-purple);
+  margin: 0 auto;
 }
 
-/* Universal Footer */
 .site-footer {
   width: 100%;
   text-align: center;
