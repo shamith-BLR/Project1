@@ -23,15 +23,16 @@ body {
   color: var(--text-dark);
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 
 .container {
   width: 100%;
   max-width: 700px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 .card {
@@ -48,6 +49,25 @@ body {
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 18px 40px rgba(49, 27, 146, 0.35);
+}
+
+/* Arrow card layout for index.html */
+.card-with-arrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-arrow {
+  font-size: 1.8rem;
+  color: var(--accent-purple);
+  font-weight: bold;
+  margin-left: 15px;
+  transition: transform 0.2s ease;
+}
+
+.card-with-arrow:hover .card-arrow {
+  transform: translateX(5px);
 }
 
 h1 {
@@ -211,7 +231,7 @@ input[type="range"] {
   font-size: 0.95rem;
 }
 
-/* Grid Options (Q1, Q2, Q3) */
+/* Grid Options (Q1, Q2, Q3) - Enlarged image size */
 .grid-options {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -233,7 +253,7 @@ input[type="range"] {
 
 .option-card img {
   width: 100%;
-  height: 120px;
+  height: 180px; /* Increased image size in quiz.html */
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
@@ -249,22 +269,25 @@ input[type="range"] {
   box-shadow: 0 4px 12px rgba(123, 31, 162, 0.2);
 }
 
-/* Circle Options (Q7, Q8) */
+/* Circle Options (Q7, Q8) - Stacked vertically and larger images */
 .circle-options {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column; /* Images stacked one below the other */
   margin-top: 15px;
-  gap: 10px;
+  gap: 15px;
 }
 
 .circle-item {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-align: left;
   cursor: pointer;
   background: var(--pale-purple);
-  padding: 12px;
+  padding: 14px 20px;
   border-radius: 16px;
   border: 2px solid transparent;
-  flex: 1;
+  width: 100%;
   transition: all 0.25s ease;
 }
 
@@ -274,20 +297,22 @@ input[type="range"] {
 }
 
 .circle-img {
-  width: 75px;
-  height: 75px;
+  width: 110px; /* Increased circle image size */
+  height: 110px; /* Increased circle image size */
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid var(--accent-purple);
-  margin-bottom: 8px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  flex-shrink: 0;
 }
 
 .circle-item input[type="radio"] {
   accent-color: var(--accent-purple);
+  width: 18px;
+  height: 18px;
 }
 
-/* Special Actor Q13 styling (Strictly Purple Theme) */
+/* Special Actor Q13 styling */
 .dhruva-sarja-option {
   background: linear-gradient(135deg, #7b1fa2, #4a148c) !important;
   color: var(--white) !important;
@@ -302,7 +327,7 @@ input[type="range"] {
   background: linear-gradient(135deg, #4a148c, #311b92) !important;
 }
 
-/* Spacing and non-overlapping for new.html */
+/* Spacing and non-overlapping for new.html with larger images */
 .gallery-grid {
   display: flex;
   flex-direction: column;
@@ -312,21 +337,22 @@ input[type="range"] {
 
 .image-node {
   background: var(--pale-purple);
-  padding: 18px;
+  padding: 20px;
   border-radius: 16px;
   box-shadow: 0 6px 16px rgba(74, 20, 140, 0.12);
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 22px;
   border: 2px solid var(--light-purple);
 }
 
 .image-node img {
-  width: 120px;
-  height: 100px;
+  width: 220px; /* Increased image size in new.html */
+  height: 180px; /* Increased image size in new.html */
   object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid var(--accent-purple);
+  border-radius: 12px;
+  border: 3px solid var(--accent-purple);
+  flex-shrink: 0;
 }
 
 .image-content {
@@ -336,20 +362,33 @@ input[type="range"] {
 .image-content strong {
   display: block;
   color: var(--deep-violet);
-  font-size: 1.1rem;
-  margin-bottom: 4px;
+  font-size: 1.2rem;
+  margin-bottom: 6px;
 }
 
 .image-content p {
   margin: 0;
   color: var(--gray-text);
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .connector-arrow {
   text-align: center;
   color: var(--accent-purple);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   margin: -10px 0;
+}
+
+/* Universal Footer */
+.site-footer {
+  width: 100%;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 30px;
+  color: var(--pale-purple);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-top: 1px solid rgba(209, 196, 233, 0.2);
 }
