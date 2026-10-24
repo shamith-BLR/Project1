@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="container">
-    <div class="card">
+    <div class="card" style="text-align: center;">
       <h1>Banni sirrr Banni Madam!!!</h1>
     </div>
 
@@ -30,23 +30,22 @@
         <div class="form-group">
           <label>Height:</label>
           <div class="radio-group">
-            <label class="radio-option"><input type="radio" name="height" value="Taller than you"> Taller than you</label>
+            <label class="radio-option"><input type="radio" name="height" value="Taller than you" required> Taller than you</label>
             <label class="radio-option"><input type="radio" name="height" value="shorter than you"> shorter than you</label>
             <label class="radio-option"><input type="radio" name="height" value="almost same height"> almost same height</label>
           </div>
         </div>
 
-        <button type="button" id="startBtn" class="btn" disabled onclick="validateAndProceed()">Start Answering</button>
+        <button type="button" id="startBtn" class="btn" disabled onclick="validateAndProceed()" style="margin-top: 15px;">Start Answering</button>
       </form>
     </div>
   </div>
 
   <script>
-    const form = document.getElementById('introForm');
-    const startBtn = document.getElementById('startBtn');
     const nameInput = document.getElementById('name');
     const placeInput = document.getElementById('meetingPlace');
     const heightRadios = document.getElementsByName('height');
+    const startBtn = document.getElementById('startBtn');
 
     function checkForm() {
       const nameVal = nameInput.value.trim();
